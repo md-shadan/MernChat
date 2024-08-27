@@ -7,7 +7,7 @@ export default function RegisterAndLoinForm() {
   const [password, setPassword] = useState("");
 
   const { setUsername: setLoggedInUsername, setId } = useContext(UserContext);
-  const [isLoginOrRegister, setIsLoginOrRegister] = useState("register");
+  const [isLoginOrRegister, setIsLoginOrRegister] = useState("login");
   
 
   async function handleSubmit(ev) {
@@ -50,8 +50,8 @@ export default function RegisterAndLoinForm() {
           {isLoginOrRegister === 'register' && (
             <div>
               Already a member?
-              <button onClick={()=> setIsLoginOrRegister('login')}>
-                Login here
+              <button className="ml-1" onClick={()=> setIsLoginOrRegister('login')}>
+                Login
               </button>
             </div>
           )}
@@ -59,8 +59,8 @@ export default function RegisterAndLoinForm() {
           {isLoginOrRegister === 'login' && (
             <div>
               Don't have account?
-              <button onClick={()=>setIsLoginOrRegister('register')}>
-                Register here
+              <button className="ml-1" onClick={()=>setIsLoginOrRegister('register')}>
+                Register
               </button>
             </div>
           )}
